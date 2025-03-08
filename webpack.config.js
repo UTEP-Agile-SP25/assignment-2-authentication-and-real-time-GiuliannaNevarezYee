@@ -5,7 +5,9 @@ module.exports = {
     entry: {
         index: './src/index.js',
         auth: './src/auth.js',
-        config: './src/config.js'
+        config: './src/config.js',
+        homescreen: './src/homescreen.js',
+        signup: './src/signup.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

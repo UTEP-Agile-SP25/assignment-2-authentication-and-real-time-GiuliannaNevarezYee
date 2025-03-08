@@ -1,7 +1,28 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "./config";
 import { db } from "./config";
-import { doc, setDoc } from "firebase/firestore";
+import { collection, doc, getDocs, setDoc } from "firebase/firestore";
+
+
+
+onAuthStateChanged(auth, async (user)=>{
+    if (user) {
+        console.log("Logged In User: ", user.email)
+        await fetchUserData(user.uid)
+    } else {
+        console.log("No user is signed in")
+    }
+})
+
+async function fetchUserData(userID) {
+    try {
+        const userDoc = await getDocs(collection(db, "users"))
+        const userData = userDoc.docs.find(doc => doc.id===userID)?.data()
+        console.log("User data: ", userData)
+    } catch (error) {
+        console.error("Error getting user data: ", error)
+    }
+}
 
 export async function signUp(firstName, lastName, email, password) {
     try {
@@ -24,7 +45,7 @@ export async function signUp(firstName, lastName, email, password) {
 export async function login(email, password) {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password)
-        window.location.href = "profileCreation.html"
+        window.location.href = "homescreen.html"
     } catch(error) {
         console.error("Login error: ", error.message)
     }
@@ -37,4 +58,16 @@ export async function logout() {
     } catch(error) {
         console.error("Logout error: ", error.message)
     }
+}
+
+export async function getUserUID() {
+    return new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                resolve(user.uid);
+            } else {
+                reject("No user is signed in");
+            }
+        });
+    });
 }

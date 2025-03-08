@@ -190,13 +190,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/signup.js":
+/*!***********************!*\
+  !*** ./src/signup.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth */ \"./src/auth.js\");\n\r\n\r\nconst logInForm = document.querySelector(\"#loginForm\")\r\nlogInForm.addEventListener(\"submit\", (event)=>{\r\n    event.preventDefault()\r\n    const email = document.getElementById(\"loginEmail\").value\r\n    const password = document.getElementById(\"loginPassword\").value\r\n\r\n    ;(0,_auth__WEBPACK_IMPORTED_MODULE_0__.login)(email, password)\r\n})\r\n\r\nconst logOutForm = document.querySelector(\"#logoutForm\")\r\nlogOutForm.addEventListener(\"submit\", (event)=>{\r\n    event.preventDefault()\r\n\r\n    ;(0,_auth__WEBPACK_IMPORTED_MODULE_0__.logout)()\r\n})\n\n//# sourceURL=webpack://assignment-2-authentication-and-real-time-giuliannanevarezyee/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./auth */ \"./src/auth.js\");\n\r\n\r\nconst signUpForm = document.querySelector(\"#signupForm\")\r\nsignUpForm.addEventListener(\"submit\", (event)=>{\r\n    event.preventDefault()\r\n    const firstName = document.getElementById(\"firstName\").value\r\n    const lastName = document.getElementById(\"lastName\").value\r\n    const email = document.getElementById(\"signupEmail\").value\r\n    const password = document.getElementById(\"signupPassword\").value\r\n\r\n    ;(0,_auth__WEBPACK_IMPORTED_MODULE_0__.signUp)(firstName, lastName, email, password)\r\n\r\n})\n\n//# sourceURL=webpack://assignment-2-authentication-and-real-time-giuliannanevarezyee/./src/signup.js?");
 
 /***/ })
 
@@ -272,7 +272,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _aut
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/signup.js");
 /******/ 	
 /******/ })()
 ;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Profile Creator</h2>
+    <div id="greeting"></div>
+
+    <form id="displayNameForm">
+        <input type="text" id="displayName" placeholder="Display Name" required><br><br>
+        
+        <input type="submit" value="Update Display Name">
+    </form>
+
+    <h2>Logout</h2>
+    <form id="logoutForm">
+        <input type="submit" value="Logout">
+    </form>
+
+    <h2>Song Manager</h2>
+    <h3>Add Song</h3>
+
+    <form id="addSong">
+        <input type="text" id="titleInput" placeholder="Enter the song title"><br></br>
+        <input type="text" id="artistInput" placeholder="Enter the artist"><br></br>
+        <input type="number" id="yearInput" placeholder="Enter the year"><br></br>
+        <input type="number" id="personalRatingInput" placeholder="Enter your personal rating"><br></br>
+
+        <input type="submit" value="Submit">
+            
+    </form>
+
+    <br><br>
+
+    <h3>Delete Song</h3>
+    <form id="deleteSong">
+
+        <input type="text" id="deleteIDInput" placeholder="Enter the song ID (Title)"><br></br>
+
+        <input type="submit" value="Submit">
+            
+    </form>
+
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Year</th>
+                <th>Personal Rating</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script src="homescreen.bundle.js"></script>
+</body>
