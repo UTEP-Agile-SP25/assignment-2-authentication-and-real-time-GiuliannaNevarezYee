@@ -1,0 +1,25 @@
+{
+  "name": "assignment-2-authentication-and-real-time-giuliannanevarezyee",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/SknQUJ55)\r # Assignment 2",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UTEP-Agile-SP25/assignment-2-authentication-and-real-time-GiuliannaNevarezYee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UTEP-Agile-SP25/assignment-2-authentication-and-real-time-GiuliannaNevarezYee/issues"
+  },
+  "homepage": "https://github.com/UTEP-Agile-SP25/assignment-2-authentication-and-real-time-GiuliannaNevarezYee#readme",
+  "devDependencies": {
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
